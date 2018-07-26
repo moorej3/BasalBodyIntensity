@@ -12,10 +12,11 @@ def listfiles(directory, extension):
 
 a = listfiles("./", ".tif")
 print(a)
-
+#a = a[3:4]
 for file in a:
     file2 = file.rsplit("/",1)[1].rsplit('.tif')[0]
-    #print(file)
+    strain = file.rsplit("/",1)[0].rsplit("./",1)[1]
+    #print(strain)
     print("\n \n Analyzing " + file + "\n")
     #filename = file.split("./")[1].split("/")[0]
-    BBQuant.BBQuant(file, file2)
+    BBQuant.BBQuant(file, file2, strain)
